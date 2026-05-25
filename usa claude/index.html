@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="United Septic Services, LLC — Septic pumping, inspections, and riser installation across Muskingum, Guernsey, Licking, Morgan, and Perry Counties, Ohio. Call (740) 607-3217." />
+  <title>United Septic Services, LLC | Ohio's Heavy-Duty Septic Pros</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       TOKENS & RESET
+    ========================================================= */
+    :root {
+      --black:       #0c0c0c;
+      --oil:         #111214;
+      --iron:        #1a1c20;
+      --steel:       #252830;
+      --slate:       #2e323a;
+      --navy:        #0a2540;
+      --navy-light:  #0d3060;
+      --crimson:     #990000;
+      --crimson-dk:  #6e0000;
+      --white:       #f2f0eb;
+      --off-white:   #d8d4cc;
+      --warm-gray:   #8a8680;
+      --gold:        #b89a4a;
+      --rule:        rgba(255,255,255,0.08);
+
+      --font-head:   'Oswald', 'Impact', sans-serif;
+      --font-ui:     'Barlow Condensed', sans-serif;
+      --font-body:   'Barlow', sans-serif;
+
+      --border-w:    3px;
+      --border-heavy:5px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; font-size: 16px; }
+    body  {
+      background: var(--oil);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-bottom: 68px; /* mobile call bar */
+    }
+    img   { display: block; max-width: 100%; }
+    a     { color: inherit; text-decoration: none; }
+    ul    { list-style: none; }
+    input, select, textarea, button { font-family: inherit; }
+
+    /* =========================================================
+       LAYOUT HELPERS
+    ========================================================= */
+    .wrap {
+      width: 100%;
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: clamp(18px, 5vw, 56px);
+    }
+
+    /* =========================================================
+       SVG ICON SYSTEM  (inline, no emojis)
+    ========================================================= */
+    .icon {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      vertical-align: middle;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: square;
+      stroke-linejoin: miter;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       STICKY HEADER
+    ========================================================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--black);
+      border-bottom: var(--border-heavy) solid var(--crimson);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      min-height: 64px;
+    }
+
+    .header-brand {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: 10px;
+    }
+
+    .brand-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.05rem, 3vw, 1.5rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-family: var(--font-ui);
+      font-size: clamp(0.6rem, 1.5vw, 0.72rem);
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hdr-nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hdr-nav a {
+      display: flex;
+      align-items: center;
+      padding-inline: clamp(12px, 2vw, 24px);
+      font-family: var(--font-ui);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      border-left: 1px solid var(--rule);
+      height: 100%;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .hdr-nav a:hover { color: var(--white); background: rgba(255,255,255,0.04); }
+
+    @media (max-width: 640px) { .hdr-nav { display: none; } }
+
+    .btn-call-hdr {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-inline: clamp(14px, 3vw, 32px);
+      background: var(--crimson);
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-size: clamp(0.78rem, 2vw, 0.92rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-left: var(--border-w) solid var(--crimson-dk);
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-call-hdr:hover { background: var(--crimson-dk); }
+
+    .btn-call-hdr .icon {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.5;
+    }
+
+    /* =========================================================
+       SECTION LABEL
+    ========================================================= */
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 14px;
+    }
+
+    .sec-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--crimson);
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      line-height: 0.93;
+      color: var(--white);
+    }
+
+    .sec-title .u-crimson { color: var(--crimson); }
+    .sec-title .u-rule {
+      display: block;
+      width: 56px;
+      height: 4px;
+      background: var(--crimson);
+      margin-top: 14px;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+    .hero {
+      position: relative;
+      background: var(--black);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/hero.jpg') center 40% / cover no-repeat;
+      opacity: 0.28;
+    }
+
+    /* Vertical wipe pattern */
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--black) 0%, transparent 55%, var(--black) 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 0;
+      min-height: clamp(560px, 80vh, 820px);
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+    }
+
+    /* LEFT — headline */
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: clamp(56px, 8vw, 100px);
+      padding-right: clamp(24px, 4vw, 56px);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.91;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--crimson);
+    }
+
+    .hero-tagline {
+      display: inline-block;
+      background: var(--crimson);
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      margin-bottom: 32px;
+      border-left: 5px solid var(--crimson-dk);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.9rem, 2vw, 1.05rem);
+      color: var(--off-white);
+      line-height: 1.7;
+      max-width: 480px;
+      border-left: 3px solid var(--slate);
+      padding-left: 18px;
+    }
+
+    .hero-phone-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .btn-hero-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--crimson);
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-size: clamp(0.88rem, 2.2vw, 1rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      border: var(--border-w) solid var(--crimson-dk);
+      transition: background 0.15s;
+    }
+
+    .btn-hero-call:hover { background: var(--crimson-dk); }
+
+    .btn-hero-call .icon {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.5;
+    }
+
+    .hero-or {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+
+    /* RIGHT — form panel */
+    .hero-form-col {
+      background: var(--navy);
+      border-left: var(--border-heavy) solid var(--crimson);
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 900px) {
+      .hero-form-col { border-left: none; border-top: var(--border-heavy) solid var(--crimson); }
+    }
+
+    .form-panel-head {
+      background: var(--crimson);
+      padding: 20px 28px;
+      border-bottom: 3px solid var(--crimson-dk);
+    }
+
+    .form-panel-head h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .form-panel-head p {
+      font-family: var(--font-ui);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+      margin-top: 5px;
+    }
+
+    .form-panel-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-group label {
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .field-group input,
+    .field-group select {
+      background: var(--black);
+      color: var(--white);
+      border: 2px solid var(--slate);
+      padding: 13px 14px;
+      font-family: var(--font-ui);
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.15s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .field-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23b89a4a' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .field-group input:focus,
+    .field-group select:focus {
+      border-color: var(--crimson);
+      outline: none;
+    }
+
+    .field-group input::placeholder { color: #555; }
+
+    .select-wrap { position: relative; }
+
+    .btn-submit {
+      background: var(--crimson);
+      color: var(--white);
+      border: var(--border-w) solid var(--crimson-dk);
+      padding: 16px;
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+
+    .btn-submit:hover { background: var(--crimson-dk); }
+
+    .form-trust-note {
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* =========================================================
+       TRUST BAR
+    ========================================================= */
+    .trust-bar {
+      background: var(--navy);
+      border-top: 3px solid var(--navy-light);
+      border-bottom: 3px solid var(--navy-light);
+    }
+
+    .trust-bar-inner {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      font-family: var(--font-ui);
+      font-size: clamp(0.72rem, 1.8vw, 0.82rem);
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--off-white);
+      border-right: 1px solid rgba(255,255,255,0.1);
+      flex: 1;
+      justify-content: center;
+    }
+
+    .trust-item:last-child { border-right: none; }
+
+    .trust-item .icon {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .trust-item { flex-basis: 50%; border-right: 1px solid rgba(255,255,255,0.1); }
+      .trust-item:nth-child(even) { border-right: none; }
+      .trust-item:nth-child(3),
+      .trust-item:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.1); }
+    }
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+    .services {
+      background: var(--oil);
+      padding-block: clamp(64px, 9vw, 110px);
+      border-top: 3px solid var(--iron);
+    }
+
+    .services-head { margin-bottom: 48px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: var(--border-w) solid var(--steel);
+    }
+
+    @media (max-width: 760px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    .svc-card {
+      padding: clamp(28px, 4vw, 44px);
+      border-right: var(--border-w) solid var(--steel);
+      position: relative;
+      background: var(--iron);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background 0.2s;
+    }
+
+    .svc-card:last-child { border-right: none; }
+
+    @media (max-width: 760px) {
+      .svc-card { border-right: none; border-bottom: var(--border-w) solid var(--steel); }
+      .svc-card:last-child { border-bottom: none; }
+    }
+
+    .svc-card:hover { background: var(--steel); }
+
+    .svc-card-accent {
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: var(--crimson);
+      margin-bottom: 4px;
+    }
+
+    .svc-num {
+      position: absolute;
+      top: 20px;
+      right: 22px;
+      font-family: var(--font-head);
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .svc-icon-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      border: 2px solid var(--navy-light);
+    }
+
+    .svc-icon-wrap .icon {
+      width: 26px;
+      height: 26px;
+      stroke: var(--gold);
+      stroke-width: 1.8;
+    }
+
+    .svc-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.25rem, 3vw, 1.7rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.05;
+    }
+
+    .svc-desc {
+      font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+      color: #8d94a0;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .svc-detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .svc-detail-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+
+    .svc-detail-list li::before {
+      content: '';
+      display: block;
+      width: 14px;
+      height: 2px;
+      background: var(--crimson);
+      margin-top: 9px;
+      flex-shrink: 0;
+    }
+
+    .svc-tag {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      align-self: flex-start;
+    }
+
+    /* =========================================================
+       EQUIPMENT SHOWCASE
+    ========================================================= */
+    .equipment {
+      background: var(--black);
+      padding-block: clamp(64px, 9vw, 110px);
+      border-top: 5px solid var(--navy);
+    }
+
+    .equipment-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 6vw, 72px);
+      align-items: center;
+    }
+
+    @media (max-width: 760px) {
+      .equipment-inner {
+        grid-template-columns: 1fr;
+      }
+      .equip-img-col { order: -1; }
+    }
+
+    /* Industrial frame */
+    .equip-frame {
+      position: relative;
+    }
+
+    .equip-frame::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: 8px;
+      bottom: 8px;
+      border: var(--border-heavy) solid var(--navy);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .equip-frame::after {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: -8px;
+      bottom: -8px;
+      border: 2px solid var(--crimson);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .equip-frame img {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: clamp(280px, 42vw, 480px);
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.08) saturate(0.88);
+    }
+
+    .equip-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      background: var(--crimson);
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-top: 2px solid var(--crimson-dk);
+    }
+
+    .equip-text-col {}
+
+    .equip-body {
+      font-size: clamp(0.88rem, 2vw, 0.98rem);
+      color: #8d94a0;
+      line-height: 1.75;
+      margin-top: 20px;
+    }
+
+    .equip-body + .equip-body { margin-top: 14px; }
+
+    .equip-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 32px;
+    }
+
+    .spec-block {
+      background: var(--iron);
+      padding: 18px 20px;
+      border-top: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .spec-block:hover { border-color: var(--crimson); }
+
+    .spec-val {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .spec-key {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 5px;
+    }
+
+    /* =========================================================
+       SERVICE AREA
+    ========================================================= */
+    .service-area {
+      background: var(--oil);
+      padding-block: clamp(64px, 9vw, 110px);
+      border-top: 3px solid var(--iron);
+    }
+
+    .area-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: start;
+      margin-top: 44px;
+    }
+
+    @media (max-width: 700px) {
+      .area-grid { grid-template-columns: 1fr; }
+    }
+
+    /* County table */
+    .county-table {
+      border: var(--border-w) solid var(--steel);
+      width: 100%;
+    }
+
+    .county-table-head {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+      background: var(--navy);
+      padding: 14px 20px;
+      border-bottom: var(--border-w) solid var(--navy-light);
+    }
+
+    .county-table-head span {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .county-table-head span:last-child { text-align: right; }
+
+    .county-row {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--rule);
+      background: var(--iron);
+      transition: background 0.15s;
+    }
+
+    .county-row:last-child { border-bottom: none; }
+    .county-row:hover { background: var(--steel); }
+
+    .county-num {
+      font-family: var(--font-head);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #444;
+    }
+
+    .county-name {
+      font-family: var(--font-ui);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .county-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: var(--crimson);
+      flex-shrink: 0;
+    }
+
+    .county-check .icon {
+      width: 14px;
+      height: 14px;
+      stroke: var(--white);
+      stroke-width: 3;
+    }
+
+    /* Area info column */
+    .area-info { display: flex; flex-direction: column; gap: 20px; }
+
+    .area-callout {
+      background: var(--navy);
+      border: var(--border-w) solid var(--navy-light);
+      border-left: var(--border-heavy) solid var(--crimson);
+      padding: clamp(22px, 3vw, 32px);
+    }
+
+    .area-callout h3 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .area-callout p {
+      font-size: 0.9rem;
+      color: var(--off-white);
+      line-height: 1.65;
+      opacity: 0.8;
+    }
+
+    .area-note {
+      background: var(--iron);
+      border-left: var(--border-w) solid var(--gold);
+      padding: 18px 20px;
+      font-size: 0.88rem;
+      color: #8d94a0;
+      line-height: 1.65;
+    }
+
+    .area-note strong { color: var(--white); }
+    .area-note a { color: var(--gold); font-weight: 700; }
+    .area-note a:hover { text-decoration: underline; }
+
+    .area-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--crimson);
+      color: var(--white);
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 18px 24px;
+      border: var(--border-w) solid var(--crimson-dk);
+      transition: background 0.15s;
+    }
+
+    .area-cta-btn:hover { background: var(--crimson-dk); }
+    .area-cta-btn .icon { width: 18px; height: 18px; stroke-width: 2.5; }
+
+    /* =========================================================
+       CTA BAND
+    ========================================================= */
+    .cta-band {
+      background: var(--crimson);
+      border-top: var(--border-heavy) solid var(--crimson-dk);
+      border-bottom: var(--border-heavy) solid var(--crimson-dk);
+      padding-block: clamp(52px, 7vw, 88px);
+      text-align: center;
+    }
+
+    .cta-band .sec-label {
+      color: rgba(255,255,255,0.65);
+      justify-content: center;
+    }
+
+    .cta-band .sec-label::before { background: rgba(255,255,255,0.5); }
+
+    .cta-band h2 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 0.93;
+      margin-bottom: 10px;
+    }
+
+    .cta-band .sub {
+      font-family: var(--font-ui);
+      font-size: clamp(0.82rem, 2vw, 1rem);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 36px;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      color: var(--crimson);
+      font-family: var(--font-head);
+      font-size: clamp(1rem, 2.8vw, 1.3rem);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 44px;
+      border: var(--border-w) solid rgba(0,0,0,0.2);
+      transition: background 0.15s;
+    }
+
+    .btn-cta-white:hover { background: var(--off-white); }
+
+    .btn-cta-white .icon {
+      width: 20px;
+      height: 20px;
+      stroke: var(--crimson);
+      stroke-width: 2.5;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    footer {
+      background: var(--black);
+      border-top: var(--border-heavy) solid var(--navy);
+      padding-block: clamp(44px, 6vw, 72px);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(32px, 5vw, 64px);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 620px) { .footer-inner { grid-template-columns: 1fr; } }
+
+    .footer-brand-name {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .footer-slogan {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand-body {
+      font-size: 0.88rem;
+      color: #5a6070;
+      line-height: 1.7;
+    }
+
+    .footer-col-label {
+      font-family: var(--font-ui);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 14px;
+      padding-left: 10px;
+      border-left: 3px solid var(--crimson);
+    }
+
+    .footer-phone-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 20px;
+      transition: color 0.15s;
+    }
+
+    .footer-phone-link:hover { color: var(--gold); }
+    .footer-phone-link .icon { width: 22px; height: 22px; stroke: var(--crimson); stroke-width: 2.5; }
+
+    .footer-county-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .f-county {
+      background: var(--iron);
+      color: #6a7080;
+      font-family: var(--font-ui);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 11px;
+      border: 1px solid var(--steel);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #353a44;
+    }
+
+    /* =========================================================
+       STICKY MOBILE CALL BAR
+    ========================================================= */
+    .mobile-call-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      background: var(--crimson);
+      border-top: var(--border-w) solid var(--crimson-dk);
+    }
+
+    .mobile-call-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 17px 24px;
+      color: var(--white);
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.15);
+    }
+
+    .mobile-call-bar .bar-num {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .mobile-call-bar .icon {
+      width: 20px;
+      height: 20px;
+      stroke: var(--white);
+      stroke-width: 2.5;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-call-bar { display: flex; }
+    }
+
+    /* =========================================================
+       HORIZONTAL RULE / DIVIDER
+    ========================================================= */
+    .h-rule {
+      height: 5px;
+      background: var(--navy);
+      border: none;
+    }
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow  { animation: fadeUp 0.55s ease both; animation-delay: 0.05s; }
+    .hero-headline { animation: fadeUp 0.6s ease both;  animation-delay: 0.2s;  }
+    .hero-tagline  { animation: fadeUp 0.6s ease both;  animation-delay: 0.35s; }
+    .hero-sub      { animation: fadeUp 0.6s ease both;  animation-delay: 0.45s; }
+    .hero-phone-row{ animation: fadeUp 0.6s ease both;  animation-delay: 0.55s; }
+    .hero-form-col { animation: fadeUp 0.7s ease both;  animation-delay: 0.3s;  }
+
+    /* =========================================================
+       FORM SUCCESS STATE
+    ========================================================= */
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      text-align: center;
+      padding: 40px 28px;
+      flex: 1;
+    }
+
+    .form-success .success-icon {
+      width: 48px;
+      height: 48px;
+      stroke: var(--gold);
+      stroke-width: 2;
+    }
+
+    .form-success h3 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .form-success p {
+      font-size: 0.9rem;
+      color: #8d94a0;
+      line-height: 1.65;
+    }
+
+    @media (min-width: 769px) { body { padding-bottom: 0; } }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+  <header>
+    <div class="wrap header-inner">
+      <div class="header-brand">
+        <span class="brand-name">United Septic Services, LLC</span>
+        <span class="brand-sub">Muskingum &amp; Surrounding Counties — Ohio</span>
+      </div>
+      <div class="header-right">
+        <nav class="hdr-nav" aria-label="Site navigation">
+          <a href="#services">Services</a>
+          <a href="#equipment">Our Fleet</a>
+          <a href="#service-area">Coverage</a>
+          <a href="#quote">Get a Quote</a>
+        </nav>
+        <a href="tel:7406073217" class="btn-call-hdr" aria-label="Call United Septic Services">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.7 13.13 19.79 19.79 0 0 1 2.63 4.5 2 2 0 0 1 4.6 2.32h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          (740) 607-3217
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ═══════════════════════════════ HERO ═════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" role="img" aria-label="Septic service equipment in the field"></div>
+
+      <div class="wrap">
+        <div class="hero-inner">
+
+          <!-- COPY -->
+          <div class="hero-copy">
+            <p class="hero-eyebrow">Ohio's Heavy-Duty Septic Professionals</p>
+            <h1 class="hero-headline">
+              Your Septic.<br />
+              Our<br />
+              <em>Specialty.</em>
+            </h1>
+            <p class="hero-tagline">#1 IN THE #2 BUSINESS &nbsp;&#x2022;&nbsp; PROUDLY AMERICAN</p>
+            <p class="hero-sub">
+              United Septic Services delivers fast, reliable septic pumping, professional inspections, and riser installations across five Ohio counties. No fluff. No runaround. Just heavy-duty work done right.
+            </p>
+            <div class="hero-phone-row">
+              <a href="tel:7406073217" class="btn-hero-call" aria-label="Call us now">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.7 13.13 19.79 19.79 0 0 1 2.63 4.5 2 2 0 0 1 4.6 2.32h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call (740) 607-3217
+              </a>
+              <span class="hero-or">or fill the form</span>
+            </div>
+          </div>
+
+          <!-- FORM -->
+          <div class="hero-form-col" id="quote" aria-labelledby="form-heading">
+            <div class="form-panel-head">
+              <h2 id="form-heading">Get a Fast Quote</h2>
+              <p>Schedule Service — We Respond Same Day</p>
+            </div>
+            <div class="form-panel-body" id="form-body">
+              <div class="field-group">
+                <label for="f-name">Your Name</label>
+                <input type="text" id="f-name" name="name" placeholder="John Smith" autocomplete="name" required />
+              </div>
+              <div class="field-group">
+                <label for="f-phone">Phone Number</label>
+                <input type="tel" id="f-phone" name="phone" placeholder="(740) 000-0000" autocomplete="tel" required />
+              </div>
+              <div class="field-group">
+                <label for="f-county">Your County</label>
+                <div class="select-wrap">
+                  <select id="f-county" name="county" required>
+                    <option value="" disabled selected>Select your county</option>
+                    <option value="muskingum">Muskingum County</option>
+                    <option value="guernsey">Guernsey County</option>
+                    <option value="licking">Licking County</option>
+                    <option value="morgan">Morgan County</option>
+                    <option value="perry">Perry County</option>
+                    <option value="other">Other / Not Sure</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="f-service">Service Needed</label>
+                <div class="select-wrap">
+                  <select id="f-service" name="service" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="pumping">Septic Tank Pumping</option>
+                    <option value="inspection">Septic System Inspection</option>
+                    <option value="riser">Riser &amp; Lid Installation</option>
+                    <option value="unsure">Not Sure — Need Advice</option>
+                  </select>
+                </div>
+              </div>
+              <button type="button" class="btn-submit" id="form-submit">
+                Request Service Now
+              </button>
+              <p class="form-trust-note">No spam. We call you back — fast.</p>
+            </div>
+            <div class="form-success" id="form-success" aria-live="polite">
+              <svg class="success-icon icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <h3>Request Received</h3>
+              <p>We'll call you back shortly. For immediate service call <a href="tel:7406073217" style="color:var(--gold);font-weight:700;">(740)&nbsp;607&#8209;3217</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar" role="complementary" aria-label="Business credentials">
+      <div class="wrap trust-bar-inner">
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          Licensed &amp; Insured
+        </div>
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Fast Response Times
+        </div>
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          Locally Owned &amp; Operated
+        </div>
+        <div class="trust-item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/>
+          </svg>
+          5-County Service Area
+        </div>
+      </div>
+    </div>
+
+    <hr class="h-rule" />
+
+    <!-- ═══════════════════════════════ SERVICES ══════════════════════════════ -->
+    <section class="services" id="services" aria-labelledby="svc-title">
+      <div class="wrap">
+        <div class="services-head">
+          <p class="sec-label">What We Do</p>
+          <h2 class="sec-title" id="svc-title">
+            Our Services
+            <span class="u-rule"></span>
+          </h2>
+        </div>
+
+        <div class="services-grid" role="list">
+
+          <article class="svc-card" role="listitem">
+            <span class="svc-num">01</span>
+            <span class="svc-card-accent"></span>
+            <div class="svc-icon-wrap" aria-hidden="true">
+              <!-- Tanker / pump truck icon -->
+              <svg class="icon" viewBox="0 0 24 24">
+                <rect x="1" y="10" width="17" height="8" rx="0"/>
+                <path d="M18 12h2l2 4v2h-4"/>
+                <circle cx="5.5" cy="18.5" r="1.5"/>
+                <circle cx="17.5" cy="18.5" r="1.5"/>
+                <path d="M1 10V7h12v3"/>
+                <line x1="8" y1="10" x2="8" y2="18"/>
+              </svg>
+            </div>
+            <h3 class="svc-name">Septic Tank Pumping</h3>
+            <p class="svc-desc">
+              Regular pumping is the single most critical step in septic maintenance. Our commercial-grade vacuum trucks remove accumulated sludge, scum, and effluent — leaving your tank clean and your system running efficiently for years.
+            </p>
+            <ul class="svc-detail-list" aria-label="Service details">
+              <li>Residential &amp; commercial tanks</li>
+              <li>Recommended every 3–5 years</li>
+              <li>Full tank inspection included</li>
+            </ul>
+            <span class="svc-tag">Most Requested</span>
+          </article>
+
+          <article class="svc-card" role="listitem">
+            <span class="svc-num">02</span>
+            <span class="svc-card-accent"></span>
+            <div class="svc-icon-wrap" aria-hidden="true">
+              <!-- Clipboard / checklist icon -->
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                <rect x="9" y="3" width="6" height="4" rx="0"/>
+                <line x1="9" y1="12" x2="15" y2="12"/>
+                <line x1="9" y1="16" x2="13" y2="16"/>
+              </svg>
+            </div>
+            <h3 class="svc-name">Septic System Inspections</h3>
+            <p class="svc-desc">
+              Whether you're buying or selling a property, or your lender requires it — our thorough inspections assess tank condition, baffle integrity, inlet and outlet function, and drain field performance. You get a clear, straight-talking report.
+            </p>
+            <ul class="svc-detail-list" aria-label="Service details">
+              <li>Real estate &amp; lender-ready reports</li>
+              <li>Drain field performance check</li>
+              <li>Complete written assessment</li>
+            </ul>
+            <span class="svc-tag">Real Estate Ready</span>
+          </article>
+
+          <article class="svc-card" role="listitem">
+            <span class="svc-num">03</span>
+            <span class="svc-card-accent"></span>
+            <div class="svc-icon-wrap" aria-hidden="true">
+              <!-- Layers / riser icon -->
+              <svg class="icon" viewBox="0 0 24 24">
+                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/>
+                <line x1="12" y1="22" x2="12" y2="15.5"/>
+                <polyline points="22 8.5 12 15.5 2 8.5"/>
+              </svg>
+            </div>
+            <h3 class="svc-name">Riser &amp; Lid Installation</h3>
+            <p class="svc-desc">
+              Stop digging up your yard at every service interval. We supply and install durable concrete and poly risers that bring your access point to grade. Lids are properly sealed and lockable — built for safety, built to last.
+            </p>
+            <ul class="svc-detail-list" aria-label="Service details">
+              <li>Concrete &amp; poly riser options</li>
+              <li>Child &amp; pet-safe locking lids</li>
+              <li>Eliminates future excavation costs</li>
+            </ul>
+            <span class="svc-tag">Smart Investment</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-rule" />
+
+    <!-- ═══════════════════════════════ EQUIPMENT ════════════════════════════ -->
+    <section class="equipment" id="equipment" aria-labelledby="equip-title">
+      <div class="wrap">
+        <div class="equipment-inner">
+
+          <div class="equip-img-col">
+            <div class="equip-frame">
+              <img
+                src="images/ustruck.jpg"
+                alt="United Septic Services flag-wrapped truck and heavy-duty silver tank trailer inside the shop"
+                loading="lazy"
+              />
+              <span class="equip-caption">United Septic Fleet — Operational &amp; Ready</span>
+            </div>
+          </div>
+
+          <div class="equip-text-col">
+            <p class="sec-label">Our Fleet</p>
+            <h2 class="sec-title" id="equip-title">
+              Commercial Grade.<br />
+              American <em class="u-crimson">Made.</em>
+              <span class="u-rule"></span>
+            </h2>
+            <p class="equip-body">
+              The rig you see is the one that shows up. Our patriotically wrapped pump truck and heavy-duty silver tank trailer aren't dressed for show — they're maintained to a commercial standard that reflects how we run every job. Tight. Clean. Zero shortcuts.
+            </p>
+            <p class="equip-body">
+              When our truck pulls into your driveway, you're getting properly equipped professionals — not a pickup truck with a borrowed trailer. That standard of equipment translates directly into faster service, safer operation, and a job done right the first time.
+            </p>
+            <div class="equip-specs" aria-label="Business highlights">
+              <div class="spec-block">
+                <div class="spec-val">5</div>
+                <div class="spec-key">Counties Covered</div>
+              </div>
+              <div class="spec-block">
+                <div class="spec-val">3</div>
+                <div class="spec-key">Core Services</div>
+              </div>
+              <div class="spec-block">
+                <div class="spec-val">#1</div>
+                <div class="spec-key">In the #2 Business</div>
+              </div>
+              <div class="spec-block">
+                <div class="spec-val">LLC</div>
+                <div class="spec-key">Licensed &amp; Insured</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="h-rule" />
+
+    <!-- ═══════════════════════════════ SERVICE AREA ═════════════════════════ -->
+    <section class="service-area" id="service-area" aria-labelledby="area-title">
+      <div class="wrap">
+        <p class="sec-label">Where We Work</p>
+        <h2 class="sec-title" id="area-title">
+          Service Area
+          <span class="u-rule"></span>
+        </h2>
+
+        <div class="area-grid">
+
+          <!-- County table -->
+          <div>
+            <div class="county-table" role="table" aria-label="Counties served">
+              <div class="county-table-head" role="row">
+                <span role="columnheader">#</span>
+                <span role="columnheader">County — Ohio</span>
+                <span role="columnheader">Active</span>
+              </div>
+              <div class="county-row" role="row">
+                <span class="county-num" role="cell">01</span>
+                <span class="county-name" role="cell">Muskingum County</span>
+                <div class="county-check" role="cell" aria-label="Served">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+              <div class="county-row" role="row">
+                <span class="county-num" role="cell">02</span>
+                <span class="county-name" role="cell">Guernsey County</span>
+                <div class="county-check" role="cell" aria-label="Served">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+              <div class="county-row" role="row">
+                <span class="county-num" role="cell">03</span>
+                <span class="county-name" role="cell">Licking County</span>
+                <div class="county-check" role="cell" aria-label="Served">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+              <div class="county-row" role="row">
+                <span class="county-num" role="cell">04</span>
+                <span class="county-name" role="cell">Morgan County</span>
+                <div class="county-check" role="cell" aria-label="Served">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+              <div class="county-row" role="row">
+                <span class="county-num" role="cell">05</span>
+                <span class="county-name" role="cell">Perry County</span>
+                <div class="county-check" role="cell" aria-label="Served">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info column -->
+          <div class="area-info">
+            <div class="area-callout">
+              <h3>Local.<br />Reliable.<br />Ready.</h3>
+              <p>We're based in the area we serve. When your system needs attention, we're not driving two counties over — we're already nearby. Fast response isn't a promise; it's the geography.</p>
+            </div>
+            <p class="area-note">
+              <strong>Not sure if we cover your address?</strong> Call us directly at <a href="tel:7406073217">(740) 607-3217</a> and we'll give you a straight answer. If we can reach you, we will.
+            </p>
+            <a href="tel:7406073217" class="area-cta-btn">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.7 13.13 19.79 19.79 0 0 1 2.63 4.5 2 2 0 0 1 4.6 2.32h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Call Now — (740) 607-3217
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ CTA BAND ══════════════════════════════ -->
+    <section class="cta-band" aria-label="Call to action">
+      <div class="wrap">
+        <p class="sec-label">Don't Wait</p>
+        <h2>Septic Problems Don't<br />Fix Themselves</h2>
+        <p class="sub">Call now — same-day scheduling available</p>
+        <a href="tel:7406073217" class="btn-cta-white">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.7 13.13 19.79 19.79 0 0 1 2.63 4.5 2 2 0 0 1 4.6 2.32h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          (740) 607-3217
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand-name">United Septic Services, LLC</div>
+          <div class="footer-slogan">#1 in the #2 Business &mdash; Ohio</div>
+          <p class="footer-brand-body">
+            Locally owned and operated. We bring honest work, heavy-duty equipment, and a no-nonsense approach to every septic job — big or small. Our name is on every truck because we stand behind every call.
+          </p>
+        </div>
+        <div>
+          <p class="footer-col-label">Contact</p>
+          <a href="tel:7406073217" class="footer-phone-link">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.7 13.13 19.79 19.79 0 0 1 2.63 4.5 2 2 0 0 1 4.6 2.32h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            (740) 607-3217
+          </a>
+          <p class="footer-col-label">Service Coverage</p>
+          <ul class="footer-county-tags" aria-label="Service area counties">
+            <li><span class="f-county">Muskingum</span></li>
+            <li><span class="f-county">Guernsey</span></li>
+            <li><span class="f-county">Licking</span></li>
+            <li><span class="f-county">Morgan</span></li>
+            <li><span class="f-county">Perry</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year"></span> United Septic Services, LLC &mdash; All Rights Reserved</span>
+        <span>Ohio, USA</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════ MOBILE CALL BAR ══════════════════════ -->
+  <div class="mobile-call-bar" role="complementary" aria-label="Quick-dial bar">
+    <a href="tel:7406073217" aria-label="Tap to call United Septic Services at 740-607-3217">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.7 13.13 19.79 19.79 0 0 1 2.63 4.5 2 2 0 0 1 4.6 2.32h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>Tap to Call</span>
+      <span class="bar-num">(740) 607-3217</span>
+    </a>
+  </div>
+
+
+  <script>
+    // ── Copyright year ──────────────────────────────────────────
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    // ── Smooth anchor scroll with header offset ─────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = document.querySelector('header').offsetHeight + 8;
+        window.scrollTo({ top: target.getBoundingClientRect().top + scrollY - offset, behavior: 'smooth' });
+      });
+    });
+
+    // ── Quote form — basic client-side validation & success state ─
+    document.getElementById('form-submit').addEventListener('click', function () {
+      const name    = document.getElementById('f-name').value.trim();
+      const phone   = document.getElementById('f-phone').value.trim();
+      const county  = document.getElementById('f-county').value;
+      const service = document.getElementById('f-service').value;
+
+      if (!name || !phone || !county || !service) {
+        // Highlight empty fields
+        [['f-name', name], ['f-phone', phone]].forEach(([id, val]) => {
+          const el = document.getElementById(id);
+          el.style.borderColor = val ? 'var(--steel)' : 'var(--crimson)';
+        });
+        ['f-county','f-service'].forEach(id => {
+          const el = document.getElementById(id);
+          el.style.borderColor = el.value ? 'var(--steel)' : 'var(--crimson)';
+        });
+        return;
+      }
+
+      // In production, POST to your backend / form handler here.
+      // For now, show the success state.
+      document.getElementById('form-body').style.display = 'none';
+      const success = document.getElementById('form-success');
+      success.style.display = 'flex';
+    });
+
+    // Reset field error highlight on input
+    document.querySelectorAll('#form-body input, #form-body select').forEach(el => {
+      el.addEventListener('input', () => { el.style.borderColor = ''; });
+    });
+  </script>
+
+</body>
+</html>
